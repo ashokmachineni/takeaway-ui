@@ -1,0 +1,150 @@
+.cart {
+  svg {
+    width: 30 px;
+    fill: #fff;
+  }
+}
+
+.cart-content {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #343a40;
+  height: 100vh;
+  text-align: left;
+  white-space: nowrap;
+  transition: width 1 s;
+  z-index: 9;
+
+  .cart-content__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20 px;
+    border-bottom: 1 px solid #4f5256;
+    height: 76 px;
+
+    > div {
+      &:first-of-type {
+        display: flex;
+        svg {
+          width: 12 px;
+          margin-right: 20 px;
+          fill: #fff;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        h2 {
+          color: #fff;
+          margin: 0;
+          font-size: 24 px;
+        }
+      }
+    }
+
+    button {
+      margin: 0;
+      color: #fff;
+
+      &:hover {
+        text-decoration: none;
+        color: #0098d3;
+
+        svg {
+          fill: #0098d3;
+        }
+      }
+
+      svg {
+        height: 20 px;
+        width: 20 px;
+        fill: #fff;
+        margin-left: 10 px;
+      }
+    }
+  }
+
+  .cart-content__products {
+    height: calc (100 vh - 76 px - 119 px);
+    overflow: scroll;
+  }
+  .cart-content__product {
+    display: flex;
+    align-items: center;
+    padding: 15 px;
+    border-bottom: 1 px solid #4f5256;
+
+    img {
+      width: 100 px;
+      margin-right: 10 px;
+    }
+
+    .cart-content__product-info {
+      color: #fff !important ;
+      width: 100%;
+
+      h3 {
+        font-size: 18 px;
+      }
+      p {
+        font-size: 16 px;
+      }
+
+      > div {
+        &:first-of-type {
+          border-bottom: 1 px solid #4f5256;
+        }
+        &:last-of-type {
+          margin-top: 15 px;
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            margin: 0;
+          }
+          button {
+            background-color: #0098d3;
+            border-color: #0098d3;
+            color: #fff;
+            border-radius: 5 px;
+            margin: 0 5 px;
+            width: 30 px;
+            height: 30 px;
+          }
+        }
+      }
+    }
+  }
+
+  .cart-content__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1 px solid #4f5256;
+    padding: 15 px;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+
+      p {
+        &:last-of-type {
+          font-weight: bold;
+          font-size: 20 px;
+        }
+      }
+    }
+
+    button {
+      background-color: #0098d3;
+      width: 100%;
+      border: 0;
+      font-size: 20 px;
+    }
+  }
+}
