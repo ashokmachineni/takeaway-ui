@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { STORAGE_ITEMS_CART } from "./utils/Constants";
 import "react-toastify/dist/ReactToastify.css";
 import { CartContext } from "./CartProvider";
-
+import "./Items";
 function Items() {
   const [foodItems, setFoodItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +20,7 @@ function Items() {
         `${cartItem.name} is already in the cart, go to cart to update quantity`,
         {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 600,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -39,7 +39,7 @@ function Items() {
       localStorage.setItem("cart", JSON.stringify([...cart, item]));
       toast.success(`${item.name} added to cart successfully`, {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -56,28 +56,26 @@ function Items() {
     });
   }, []);
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-3 gap-4">
-        {foodItems.map((foodItem) => (
-          <ItemGrid
-            key={foodItem.name}
-            foodItem={foodItem}
-            isLoading={isLoading}
-            addProductsToCart={addProductsToCart}
-          />
-        ))}
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
+    <div className="row row-cols-1 row-cols-md-3 g-4 tops">
+      {foodItems.map((foodItem) => (
+        <ItemGrid
+          key={foodItem.name}
+          foodItem={foodItem}
+          isLoading={isLoading}
+          addProductsToCart={addProductsToCart}
         />
-      </div>
+      ))}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

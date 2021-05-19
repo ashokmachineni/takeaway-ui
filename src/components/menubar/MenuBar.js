@@ -18,7 +18,7 @@ export default function MenuBar() {
             className="d-inline-block align-top"
             alt=""
           />
-          <h2>React Bootstrap</h2>
+          <h2>React Restaurant</h2>
         </Navbar.Brand>
         <NavOptions />
         <Cart />
